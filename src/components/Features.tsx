@@ -6,7 +6,7 @@ import { FaCode } from "react-icons/fa";
 import { FiHexagon } from "react-icons/fi";
 import { RxCheckCircled } from "react-icons/rx";
 import { FaArrowRightLong } from "react-icons/fa6";
-import waves from "../assets/waves.svg"
+import waves from "../assets/waves.svg";
 
 interface FeatureInterFace {
   title: string;
