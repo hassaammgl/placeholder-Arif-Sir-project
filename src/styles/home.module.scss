@@ -1,0 +1,38 @@
+@import "./utils";
+
+.home {
+  width: 75rem;
+  margin: 0 auto;
+  @include flexer();
+  height: fit-content;
+  padding: 7rem 0;
+  .left {
+    @include flexer(column, center, flex-start);
+    gap: 2rem;
+    padding: 0 1.5rem;
+    h1 {
+      font-family: $font1;
+      color: $color1;
+      font-size: 3.5rem;
+    }
+    p {
+      font-family: $font1;
+      width: 31rem;
+      color: $color3;
+    }
+    button {
+      all: unset;
+      font-family: $font1;
+      color: $color4;
+      background-color: $color1;
+      padding: 0.8rem 4rem;
+      border-radius: 7px;
+    }
+  }
+  .right {
+    img {
+      width: 35rem;
+      height: 40rem;
+    }
+  }
+}
