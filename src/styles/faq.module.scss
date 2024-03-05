@@ -1,0 +1,24 @@
+@use "./utils" as utils;
+
+.faq {
+  @include utils.body;
+  padding: 3rem 0;
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .content {
+    width: 40vw;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    .accordian{
+      margin: 1rem 0;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}

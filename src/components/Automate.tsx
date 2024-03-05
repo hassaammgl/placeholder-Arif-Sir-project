@@ -9,7 +9,7 @@ interface AutomateInterFace {
   icon: any;
   desc: string;
 }
-
+ 
 const Automate = () => {
   const boxes: AutomateInterFace[] = [
     {

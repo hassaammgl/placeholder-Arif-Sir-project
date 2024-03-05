@@ -1,0 +1,77 @@
+@use "./utils" as utils;
+
+.footer {
+  @include utils.body2;
+  background-color: utils.$color1;
+  color: white;
+  > .footermain {
+    height: fit-content;
+    @include utils.body;
+
+    .footerfooter {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: .9rem;
+    }
+
+    > .footercontent {
+      padding: 4rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 6rem;
+      gap: 2rem;
+
+      .boxes {
+        gap: 1rem;
+        @include utils.flexer(column, space-between, flex-start);
+
+        > h2 {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        > a {
+          all: unset;
+          cursor: pointer;
+          font-size: 0.8rem;
+        }
+      }
+
+      .boxes1 {
+        gap: 1rem;
+        @include utils.flexer(column, space-between, flex-start);
+
+        > h2 {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        > .icons {
+          gap: 0.5rem;
+          cursor: pointer;
+          font-size: 1.2rem;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        > .mail {
+          @include utils.flexer();
+          gap: 0.5rem;
+          cursor: pointer;
+          a {
+            all: unset;
+            font-size: 0.8rem;
+          }
+        }
+
+        > .number {
+          gap: 0.5rem;
+          @include utils.flexer();
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

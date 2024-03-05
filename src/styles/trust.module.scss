@@ -1,0 +1,65 @@
+@use "./utils" as utils;
+
+.trust {
+  // align-items: center;
+  @include utils.body;
+  height: 90vh;
+  > h1 {
+    text-align: center;
+    color: utils.$color6;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  > h3 {
+    margin: 1rem auto;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: utils.$color3;
+    text-align: center;
+    width: 50%;
+  }
+  .btn {
+    width: 100%;
+    // border: 2px solid red;
+    @include utils.flexer();
+    button {
+      all: unset;
+      background-color: utils.$color1;
+      color: utils.$color4;
+      border-radius: 7px;
+      padding: 0.8rem 2.5rem;
+      margin: 4rem 2rem;
+    }
+  }
+}
+
+.slides {
+  @include utils.flexer(column);
+  padding: 1.3rem;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  background-color: utils.$color9;
+
+  > h4 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: utils.$color7;
+    margin-bottom: 0.8rem;
+  }
+  > p {
+    color: utils.$color8;
+    margin: 1rem;
+    font-size: 0.85rem;
+  }
+  > span {
+    margin: 0.51rem;
+    color: utils.$color1;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+}

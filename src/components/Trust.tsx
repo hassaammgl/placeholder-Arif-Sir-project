@@ -89,25 +89,28 @@ const Trust = () => {
         Our goal is your success.We do our best to make your mission easy and
         save time.
       </h3>
-      <div className={style.silder}>
+      <div className={style.silderbox}>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
-          slidesPerView={3}
+          spaceBetween={70}
+          slidesPerView={2.5}
           navigation
+          className={style.silderSect}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
           {comments.map((comment, i) => {
             return (
-              <SwiperSlide key={i}>
+              <SwiperSlide  key={i}>
                 <div className={style.slides}>
                   <h4>{comment.comment}</h4>
                   <StarRatings
                     rating={comment.stars}
-                    starRatedColor="yellow"
+                    starRatedColor="#F5A623"
                     numberOfStars={5}
+                    starDimension="23px"
+                    starSpacing="5px"
                     name="rating"
                   />
                   <p>{comment.description}</p>
@@ -117,7 +120,10 @@ const Trust = () => {
             );
           })}
         </Swiper>
+        <div className={style.btn}>
+
         <button className={style.free_trail}>Start Free trial</button>
+        </div>
       </div>
     </section>
   );

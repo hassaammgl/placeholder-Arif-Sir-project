@@ -1,0 +1,65 @@
+@use "./utils" as utils;
+
+.auto {
+  @include utils.body;
+  margin-top: 2rem;
+  font-family: utils.$font1;
+  font-size: 1.6rem;
+  > h2 {
+    font-weight: 500;
+    margin: 1.2rem 0;
+    color: utils.$color1;
+  }
+  > h4 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: utils.$color3;
+  }
+  > .group {
+    @include utils.flexer;
+    .left {
+      width: 50%;
+      > .boxes {
+        margin-bottom: 2rem;
+        @include utils.flexer(row, center, flex-start);
+        font-family: utils.$font1;
+        > .box {
+          width: 17rem;
+          margin-right: 3rem;
+          //   border: 2px solid red;
+          .icon {
+            color: utils.$color2;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+          }
+          > h5 {
+            margin-bottom: 1rem;
+            color: utils.$color1;
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+          > p {
+            font-size: 1rem;
+            color: utils.$color3;
+          }
+        }
+      }
+      > button {
+        all: unset;
+        font-family: utils.$font1;
+        color: utils.$color4;
+        background-color: utils.$color1;
+        padding: 0.7rem 4rem;
+        font-size: 19px;
+        border-radius: 7px;
+        margin-top: 1.2rem;
+      }
+    }
+    > .right {
+      width: 55%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -17,7 +17,7 @@ const Pricing = () => {
   const pricings: PricingItem[] = [
     {
       category: "Beginner",
-      price: "10",
+      price: "10.00",
       features: [
         { title: "Manual Trading", icon: RxCheckCircled },
         { title: "Manual Trading", icon: RxCheckCircled },
@@ -28,7 +28,7 @@ const Pricing = () => {
     },
     {
       category: "Premium",
-      price: "20",
+      price: "20.00",
       features: [
         { title: "Manual Trading", icon: RxCheckCircled },
         { title: "Manual Trading", icon: RxCheckCircled },
@@ -39,7 +39,7 @@ const Pricing = () => {
     },
     {
       category: "Business",
-      price: "30",
+      price: "30.00",
       features: [
         { title: "Manual Trading", icon: RxCheckCircled },
         { title: "Manual Trading", icon: RxCheckCircled },
@@ -58,16 +58,18 @@ const Pricing = () => {
           <div className={style.card} key={i}>
             <h3>{plans.category}</h3>
             <div className={style.prices}>
-              <span>$</span>
+              <span className={style.currency}>$</span>
               {plans.price} <span className={style.duration}>/month</span>
             </div>
             <button className={style.btn}>Buy Now</button>
-            {plans.features.map((features, i) => (
-              <span className={style.feat} key={i}>
-                <features.icon className={style.icon} />
-                {features.title}
-              </span>
-            ))}
+            <div className={style.features}>
+              {plans.features.map((features, i) => (
+                <span className={style.feat} key={i}>
+                  <features.icon className={style.icon} />
+                  {features.title}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>

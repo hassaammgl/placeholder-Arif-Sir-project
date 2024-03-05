@@ -73,6 +73,7 @@
         all: unset;
         @include flexer(row, flex-start);
         color: $color1;
+        font-weight: 600;
         .icon {
           margin: 0 1rem;
         }
@@ -87,9 +88,4 @@
       }
     }
   }
-  // .bottom{
-  //   border: 2px solid red;
-  //   background: #000;
-
-  // }
 }
