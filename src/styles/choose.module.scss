@@ -1,42 +1,117 @@
 @use "./utils" as utils;
 
 .choose {
-  @include utils.body;
-  margin-top: 5rem;
-  @include utils.flexer(column);
-  > h2 {
-    color: utils.$color2;
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-  > h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: utils.$color6;
-  }
-  > .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    margin: 0 6rem;
-    gap: 2rem;
-    > .card {
-      @include utils.flexer(column);
-      text-align: center;
+  background-color: utils.$color10;
+  .chooseMain {
+    @include utils.flexer(column);
+    padding-top: 5rem;
+    @include utils.body;
+
+    > h2 {
       color: utils.$color2;
-      gap: 1rem;
-      padding: 3rem 2rem;
-      > .icon {
-        font-size: 3rem;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    > h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: utils.$color6;
+    }
+    > .cards {
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      margin: 2rem 6rem;
+      gap: 2rem;
+      > .card {
+        @include utils.flexer(column);
+        text-align: center;
+        color: utils.$color2;
+        background-color: utils.$color4;
+        border-radius: 8px;
+        gap: 1rem;
+        padding: 3rem 2rem;
+        > .icon {
+          font-size: 3rem;
+        }
+        > h4 {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        > p {
+          color: utils.$color3;
+        }
       }
-      > h4 {
-        font-size: 1.5rem;
-        font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .choose {
+    > h2 {
+      color: utils.$color2;
+      font-size: 2.2rem;
+    }
+    > .cards {
+      margin: 0 1rem;
+      gap: 1.5rem;
+      > .card {
+        @include utils.flexer(column);
+        text-align: center;
+        color: utils.$color2;
+        gap: 1rem;
+        padding: 3rem 2rem;
+        > .icon {
+          font-size: 3rem;
+        }
+        > h4 {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        > p {
+          color: utils.$color3;
+        }
       }
-      > p {
-        color: utils.$color3;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+
+  @media screen and (max-width: 550px) {
+    margin: 2rem 0;
+    display: block;
+    width: 100%;
+    justify-content: center;
+    padding: 0 1rem;
+    h2 {
+      text-align: start;
+      font-family: utils.$font1;
+      font-weight: 500;
+      font-size: 1.8rem;
+    }
+    .responsive {
+      margin: 1rem 0;
+      justify-content: center;
+      align-items: center;
+
+      .response {
+        line-height: 2rem;
+        @include utils.flexer();
+        font-family: utils.$font1;
+        gap: 1rem;
+
+        .tick {
+          font-size: 2rem;
+        }
+
+        .responsecontent {
+          font-size: 1.2rem;
+        }
       }
     }
   }

@@ -6,6 +6,7 @@
   @include flexer();
   height: fit-content;
   padding: 7rem 0;
+
   .left {
     @include flexer(column, center, flex-start);
     gap: 2rem;
@@ -17,8 +18,9 @@
     }
     p {
       font-family: $font1;
-      width: 31rem;
+      width: 34rem;
       color: $color3;
+      font-size: 1.5rem;
     }
     button {
       all: unset;
@@ -37,39 +39,56 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+// MEDIQ QUERIES
+
+@media screen and (max-width: 1060px) {
   .home {
-    height: fit-content;
-    width: fit-content;
-    @include flexer(column);
-    padding: 5rem 0;
+    padding: 3rem 1.2rem;
 
     .left {
-      text-align: center;
-      gap: 0;
-      padding: 0rem;
-
+      gap: 1.8rem;
       h1 {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1rem;
+        font-size: 2.8rem;
       }
-
       p {
-        font-size: .5rem;
-        padding: 0 .5rem;
-      }
-
-      button {
-        justify-content: center;
-        align-items: center;
+        width: 85%;
       }
     }
 
-    .right{
+    .right {
       img {
-        width: 15rem;
-        height: 20rem;
+        width: 28rem;
+        height: 30rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .home {
+    @include flexer(column);
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0.5rem;
+
+    .left {
+      @include flexer(center);
+      width: 100%;
+      h1 {
+        font-size: 2.2rem;
+      }
+      p {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+
+    .right {
+      margin-top: 1.5rem;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 25rem;
       }
     }
   }

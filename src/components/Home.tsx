@@ -29,7 +29,7 @@ const Home = () => {
           </aside>
         </section>
       </Suspense>
-       <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
         <Features />
       </Suspense>
       <Suspense fallback={<Loader />}>
@@ -44,9 +44,9 @@ const Home = () => {
       <Suspense fallback={<Loader />}>
         <Pricing />
       </Suspense>
-      <Suspense fallback={<Loader />}>
+      {/*    <Suspense fallback={<Loader />}>
         <Faq />
-      </Suspense> 
+      </Suspense>  */}
     </>
   );
 };

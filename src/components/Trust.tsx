@@ -84,45 +84,46 @@ const Trust = () => {
   ];
   return (
     <section className={style.trust}>
-      <h1>Thousand of user trust US</h1>
-      <h3>
-        Our goal is your success.We do our best to make your mission easy and
-        save time.
-      </h3>
-      <div className={style.silderbox}>
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={70}
-          slidesPerView={2.5}
-          navigation
-          className={style.silderSect}
-          pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-        >
-          {comments.map((comment, i) => {
-            return (
-              <SwiperSlide  key={i}>
-                <div className={style.slides}>
-                  <h4>{comment.comment}</h4>
-                  <StarRatings
-                    rating={comment.stars}
-                    starRatedColor="#F5A623"
-                    numberOfStars={5}
-                    starDimension="23px"
-                    starSpacing="5px"
-                    name="rating"
-                  />
-                  <p>{comment.description}</p>
-                  <span>{comment.author}</span>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        <div className={style.btn}>
-
-        <button className={style.free_trail}>Start Free trial</button>
+      <div className={style.trustMain}>
+        <h1>Thousand of user trust US</h1>
+        <h3>
+          Our goal is your success.We do our best to make your mission easy and
+          save time.
+        </h3>
+        <div className={style.silderbox}>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={70}
+            slidesPerView={2.2}
+            navigation
+            className={style.silderSect}
+            pagination={{ clickable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log("slide change")}
+          >
+            {comments.map((comment, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <div className={style.slides}>
+                    <h4>{comment.comment}</h4>
+                    <StarRatings
+                      rating={comment.stars}
+                      starRatedColor="#F5A623"
+                      numberOfStars={5}
+                      starDimension="23px"
+                      starSpacing="5px"
+                      name="rating"
+                    />
+                    <p>{comment.description}</p>
+                    <span>{comment.author}</span>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          <div className={style.btn}>
+            <button className={style.free_trail}>Start Free trial</button>
+          </div>
         </div>
       </div>
     </section>

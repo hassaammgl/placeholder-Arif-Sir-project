@@ -1,36 +1,47 @@
 @use "./utils" as utils;
 
 .trust {
-  // align-items: center;
-  @include utils.body;
+  background-color: utils.$color9;
   height: 90vh;
-  > h1 {
-    text-align: center;
-    color: utils.$color6;
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
+  @media screen and (max-width: 1440px) {
+   padding:  0 2rem; 
   }
-  > h3 {
-    margin: 1rem auto;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: utils.$color3;
-    text-align: center;
-    width: 50%;
-  }
-  .btn {
-    width: 100%;
-    // border: 2px solid red;
-    @include utils.flexer();
-    button {
-      all: unset;
-      background-color: utils.$color1;
-      color: utils.$color4;
-      border-radius: 7px;
-      padding: 0.8rem 2.5rem;
-      margin: 4rem 2rem;
+  .trustMain {
+    @include utils.body;
+    flex-wrap: wrap;
+    > h1 {
+      text-align: center;
+      color: utils.$color6;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    > h3 {
+      margin: 1rem auto;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: utils.$color3;
+      text-align: center;
+      width: 50%;
+    }
+    > div{
+     padding:  0 2rem; 
+     overflow-y: hidden;
+     width: 90%;
+
+    }
+    .btn {
+      width: 100%;
+      @include utils.flexer();
+      button {
+        all: unset;
+        background-color: utils.$color1;
+        color: utils.$color4;
+        border-radius: 7px;
+        padding: 0.8rem 2.5rem;
+        margin: 4rem 2rem;
+      }
     }
   }
 }
@@ -40,11 +51,11 @@
   padding: 1.3rem;
   text-align: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   border-radius: 20px;
   border: 2px solid #fff;
   background-color: utils.$color9;
-
+  
   > h4 {
     font-weight: 500;
     font-size: 1.2rem;

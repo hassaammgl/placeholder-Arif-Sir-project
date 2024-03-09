@@ -8,13 +8,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 interface DataInterface {
   title: string;
-  content:  string;
-
-};
-
+  content: string;
+}
 
 const Faq: FC = () => {
-  const data:DataInterface[] = [
+  const data: DataInterface[] = [
     {
       title: "Lorem ipsum dolor sit amet,",
       content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
@@ -34,29 +32,40 @@ const Faq: FC = () => {
             Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
             Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
     },
+    {
+      title: "Curabitur laoreet, mauris vel blandit fringilla",
+      content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
+            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+    },
+    {
+      title: "Curabitur laoreet, mauris vel blandit fringilla",
+      content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
+            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+    },
   ];
 
   return (
     <section className={style.faq}>
       <h1>Faq</h1>
       <div className={style.content}>
-        {data.map((data,i)=>{
-          return(
+        {data.map((data, i) => {
+          return (
             <Accordion key={i} className={style.accordian}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2-content"
-              id="panel2-header"
-            >
-              {data.title}
-            </AccordionSummary>
-            <AccordionDetails>
-            {data.content}
-            </AccordionDetails>
-          </Accordion>
-          )
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel2-content"
+                id="panel2-header"
+              >
+                {data.title}
+              </AccordionSummary>
+              <AccordionDetails>{data.content}</AccordionDetails>
+            </Accordion>
+          );
         })}
-       
       </div>
     </section>
   );
