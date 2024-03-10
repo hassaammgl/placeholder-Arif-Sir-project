@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
+    <>
     <header className={style.header}>
       <nav className={style.nav}>
         <div className={style.logo}>TelegramHolder</div>
@@ -15,6 +16,7 @@ const Header = () => {
         <button className={style.btn}>Get Started</button>
       </nav>
     </header>
+    </>
   );
 };
 

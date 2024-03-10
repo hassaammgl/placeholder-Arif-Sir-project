@@ -2,23 +2,34 @@
 
 .faq {
   @include utils.body;
-  padding: 3rem 0;
+  border: 2px solid red;
+  .faqMain {
+    border: 2px solid black;
+    // padding: 3rem 0;
+    // @include utils.body2;
+    border: 2px solid black;
+    
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
 
-  h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-  }
+    .content {
 
-  .content {
-    width: 40vw;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
+      width: 40rem;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
 
-    .accordian{
-      margin: 1rem 0;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      @media screen and (max-width:500px) {
+        width: 90%;
+      }
+
+      .accordian {
+        margin: 1rem 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
     }
   }
 }

@@ -48,8 +48,9 @@ const Faq: FC = () => {
     },
   ];
 
-  return (
+  return ( 
     <section className={style.faq}>
+    <div className={style.faqMain}>
       <h1>Faq</h1>
       <div className={style.content}>
         {data.map((data, i) => {
@@ -66,6 +67,7 @@ const Faq: FC = () => {
             </Accordion>
           );
         })}
+      </div>
       </div>
     </section>
   );
