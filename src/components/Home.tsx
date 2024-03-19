@@ -12,7 +12,7 @@ const Trust = lazy(() => import("./Trust"));
 const Home = () => {
   return (
     <>
-      {/* <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
         <section className={style.home}>
           <aside className={style.left}>
             <h1>Telegram Place holder here</h1>
@@ -28,25 +28,25 @@ const Home = () => {
             <img src={Phone} alt="phone" />
           </aside>
         </section>
-      </Suspense> */}
-      {/* <Suspense fallback={<Loader />}>
+      </Suspense>
+      <Suspense fallback={<Loader />}>
         <Features />
-      </Suspense> */}
-      {/* <Suspense fallback={<Loader />}>
+      </Suspense>
+      <Suspense fallback={<Loader />}>
         <Automate />
-      </Suspense> */}
-      {/* <Suspense fallback={<Loader />}>
+      </Suspense>
+      <Suspense fallback={<Loader />}>
         <Choose />
       </Suspense>
       <Suspense fallback={<Loader />}>
         <Trust />
-      </Suspense> */}
-      {/* <Suspense fallback={<Loader />}>
+      </Suspense>
+      <Suspense fallback={<Loader />}>
         <Pricing />
-      </Suspense> */}
-      {/* <Suspense fallback={<Loader />}>
+      </Suspense>
+      <Suspense fallback={<Loader />}>
         <Faq />
-      </Suspense> */}
+      </Suspense>
     </>
   );
 };

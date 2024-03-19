@@ -48,26 +48,26 @@ const Faq: FC = () => {
     },
   ];
 
-  return ( 
+  return (
     <section className={style.faq}>
-    <div className={style.faqMain}>
-      <h1>Faq</h1>
-      <div className={style.content}>
-        {data.map((data, i) => {
-          return (
-            <Accordion key={i} className={style.accordian}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel2-content"
-                id="panel2-header"
-              >
-                {data.title}
-              </AccordionSummary>
-              <AccordionDetails>{data.content}</AccordionDetails>
-            </Accordion>
-          );
-        })}
-      </div>
+      <div className={style.faqMain}>
+        <h1>Faq</h1>
+        <div className={style.content}>
+          {data.map((data, i) => {
+            return (
+              <Accordion key={i} className={style.accordian}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2-content"
+                  id="panel2-header"
+                >
+                  {data.title}
+                </AccordionSummary>
+                <AccordionDetails>{data.content}</AccordionDetails>
+              </Accordion>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -10,6 +10,12 @@ interface cards {
   description: string;
 }
 
+interface cardsMobile {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: SVGAElement | any;
+  description: string;
+}
+
 const cardsArr: cards[] = [
   {
     icon: FaCode,
@@ -49,27 +55,67 @@ const cardsArr: cards[] = [
   },
 ];
 
+const cardsMobileArr: cardsMobile[] = [
+  {
+    icon: RiCheckDoubleFill,
+    description: "Our bots never seeep.Profid 24/7.Emotion-free",
+  },
+  {
+    icon: RiCheckDoubleFill,
+    description: "Our bots never seeep.Profid 24/7.Emotion-free",
+  },
+  {
+    icon: RiCheckDoubleFill,
+    description: "Our bots never seeep.Profid 24/7.Emotion-free",
+  },
+  {
+    icon: RiCheckDoubleFill,
+    description: "Our bots never seeep.Profid 24/7.Emotion-free",
+  },
+  {
+    icon: RiCheckDoubleFill,
+    description: "Our bots never seeep.Profid 24/7.Emotion-free",
+  },
+  {
+    icon: RiCheckDoubleFill,
+    description: "Our bots never seeep.Profid 24/7.Emotion-free",
+  },
+];
+
 const Choose = () => {
   return (
     <>
       <section className={style.choose}>
         <div className={style.chooseMain}>
-
-        <h2>Why choose us</h2>
-        <h3>Our bots never seeep.Profid 24/7.Emotion-free</h3>
-        <div className={style.cards}>
-          {cardsArr.map((card, i) => {
+          <h2>Why choose us</h2>
+          <h3>Our bots never seeep.Profid 24/7.Emotion-free</h3>
+          <div className={style.cards}>
+            {cardsArr.map((card, i) => {
+              return (
+                <div key={i} className={style.card}>
+                  <card.icon className={style.icon} />
+                  <h4>{card.title}</h4>
+                  <p>{card.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      <section className={style.mobile}>
+        <h2>Why Choose us</h2>
+        <div className={style.responsive}>
+          {cardsMobileArr.map((card, i) => {
             return (
-              <div key={i} className={style.card}>
-                <card.icon className={style.icon} />
-                <h4>{card.title}</h4>
-                <p>{card.description}</p>
+              <div className={style.response} key={i}>
+                <div className={style.tick}>
+                  <card.icon />
+                </div>
+                <div className={style.responsecontent}>{card.description}</div>
               </div>
             );
           })}
         </div>
-  
-          </div>
       </section>
     </>
   );

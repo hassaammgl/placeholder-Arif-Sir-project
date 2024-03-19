@@ -23,45 +23,49 @@ const Features = () => {
     { title: "Place holder", icon: FiHexagon },
   ];
   return (
-    <section className={style.features}>
-      <h1>Features</h1>
-      <p>
-        Ye am depending propriety sweetness distrusts Ye am depending propriety
-        sweetness distrusts belonging collected.{" "}
-      </p>
-      <div className={style.featureCards}>
-        {featu.map((item, index) => (
-          <div className={style.item} key={index}>
-            <item.icon className={style.icon} />
-            <span>{item.title}</span>
-          </div>
-        ))}
-      </div>
-      <div className={style.trading}>
-        <div className={style.left}>
-          <img src={trading} alt="trading" />
-        </div>
-        <div className={style.right}>
-          <h3>Place Holder</h3>
-          <h4>
-            <RxCheckCircled className={style.icon} />
-            Manual Trading
-          </h4>
+    <>
+      <div className={style.feature}>
+        <section className={style.features}>
+          <h1>Features</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nihil
-            velit a quaerat minima, fugiat ipsam necessitatibus! Ad, error
-            aspernatur, accusantium pariatur excepturi animi harum odit porro
-            dignissimos, iste fugiat?
+            Ye am depending propriety sweetness distrusts Ye am depending
+            propriety sweetness distrusts belonging collected.{" "}
           </p>
-          <Link to="/">
-            Learn More <FaArrowRightLong className={style.icon} />
-          </Link>
-        </div>
+          <div className={style.featureCards}>
+            {featu.map((item, index) => (
+              <div className={style.item} key={index}>
+                <item.icon className={style.icon} />
+                <span>{item.title}</span>
+              </div>
+            ))}
+          </div>
+          <div className={style.trading}>
+            <div className={style.left}>
+              <img src={trading} alt="trading" />
+            </div>
+            <div className={style.right}>
+              <h3>Place Holder</h3>
+              <h4>
+                <RxCheckCircled className={style.icon} />
+                Manual Trading
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
+                nihil velit a quaerat minima, fugiat ipsam necessitatibus! Ad,
+                error aspernatur, accusantium pariatur excepturi animi harum
+                odit porro dignissimos, iste fugiat?
+              </p>
+              <Link to="/">
+                Learn More <FaArrowRightLong className={style.icon} />
+              </Link>
+            </div>
+          </div>
+          <div className={style.bottom}>
+            <img src={waves} alt="" />
+          </div>
+        </section>
       </div>
-      <div className={style.bottom}>
-        <img src={waves} alt="" />
-      </div>
-    </section>
+    </>
   );
 };
 

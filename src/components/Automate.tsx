@@ -9,13 +9,13 @@ interface AutomateInterFace {
   icon: any;
   desc: string;
 }
- 
+
 const Automate = () => {
   const boxes: AutomateInterFace[] = [
     {
       title: "Create an advanced Place holder",
       icon: FaCode,
-      desc: "Choose when to send transform,delay,clean,watermark, white list.",
+      desc: "Choose when to send transform,delay,clean, watermark, white list.",
     },
     {
       title: "Create an advanced Place holder",

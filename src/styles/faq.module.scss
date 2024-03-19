@@ -2,33 +2,40 @@
 
 .faq {
   @include utils.body;
-  border: 2px solid red;
+  width: 100%;
+  background-color: utils.$color10;
+  height: fit-content;
+  padding: 2.5rem 0;
   .faqMain {
-    border: 2px solid black;
-    // padding: 3rem 0;
-    // @include utils.body2;
-    border: 2px solid black;
-    
     h1 {
       text-align: center;
       font-size: 2.5rem;
-      margin-bottom: 3rem;
     }
 
     .content {
-
-      width: 40rem;
+      width: 45rem;
       margin: 0 auto;
       justify-content: center;
       align-items: center;
 
-      @media screen and (max-width:500px) {
-        width: 90%;
+      @media screen and (max-width: 760px) {
+        width: 92%;
+        background: utils.$color1;
       }
 
       .accordian {
-        margin: 1rem 0;
+        margin-top: 1rem;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .faq {
+    background-color: utils.$color1;
+    .faqMain {
+      h1 {
+        color: white;
       }
     }
   }

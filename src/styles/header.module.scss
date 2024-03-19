@@ -1,11 +1,11 @@
 @import "./utils";
 
 .header {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   font-family: $font1;
   .nav {
-    width: 75rem;
+    width: 75%;
     margin: 0 auto;
     padding: 1rem;
     @include flexer(row, space-between);
@@ -24,10 +24,10 @@
         padding: 1rem;
         text-align: center;
         margin: 0 5px;
-        transition: all ease-in-out .2s;
+        transition: all ease-in-out 0.2s;
         border-radius: 7px;
         cursor: pointer;
-        &:nth-child(1){
+        &:nth-child(1) {
           font-weight: 700;
         }
         &:hover {
@@ -38,6 +38,7 @@
         }
       }
     }
+
     .btn {
       all: unset;
       color: $color1;
@@ -45,6 +46,82 @@
       border-radius: 6px;
       padding: 10px 2.5rem;
       font-weight: 600;
+    }
+
+    .hamburger {
+      display: none;
+      button {
+        > .open {
+          height: 2rem;
+          color: black;
+          width: 1.8rem;
+        }
+      }
+      @media screen and (max-width: 980px) {
+        display: block;
+      }
+    }
+    @media screen and (max-width: 1330px) {
+      width: 98%;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .header {
+    .nav {
+      .links {
+        display: none;
+      }
+
+      .btn {
+        display: none;
+      }
+    }
+  }
+}
+
+.modal {
+  all: unset;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  .mobile {
+    background: $color4;
+    height: 100%;
+    width: 100%;
+
+    button {
+      float: right;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      > .open {
+        height: 2rem;
+        color: black;
+        width: 1.8rem;
+      }
+    }
+
+    span {
+      margin: 3px 0;
+      padding: 0.5rem;
+      width: 100vw;
+      display: inline-block;
+
+      &:hover {
+        background-color: $color10;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+      }
+      a {
+        all: unset;
+        padding: 1rem;
+        font-size: 1.8rem;
+        font-family: $font1;
+        color: $color1;
+      }
     }
   }
 }

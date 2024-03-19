@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { useEffect, useState } from "react";
 
 interface commentInterface {
   comment: string;
@@ -17,6 +18,15 @@ interface commentInterface {
 }
 
 const Trust = () => {
+  const [winWidth, setWinWidth] = useState<number>();
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWinWidth(window.innerWidth);
+    });
+    return window.removeEventListener("resize", () => {});
+  }, []);
+
   const comments: commentInterface[] = [
     {
       comment: "It helped me alot with my channels",
@@ -94,7 +104,8 @@ const Trust = () => {
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={70}
-            slidesPerView={2.2}
+            // slidesPerView={winWidth < 1200 ? 3 : 2 }
+            slidesPerView={winWidth < 850 ? 1 : winWidth < 1300 ? 1.5 : 3}
             navigation
             className={style.silderSect}
             pagination={{ clickable: true }}

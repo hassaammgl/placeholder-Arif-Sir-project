@@ -20,11 +20,10 @@
       color: utils.$color6;
     }
     > .cards {
-
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      margin: 2rem 6rem;
+      margin: 2rem 1rem;
       gap: 2rem;
       > .card {
         @include utils.flexer(column);
@@ -33,7 +32,7 @@
         background-color: utils.$color4;
         border-radius: 8px;
         gap: 1rem;
-        padding: 3rem 2rem;
+        padding: 3rem 1.5rem;
         > .icon {
           font-size: 3rem;
         }
@@ -49,30 +48,70 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1150px) {
   .choose {
-    > h2 {
-      color: utils.$color2;
-      font-size: 2.2rem;
-    }
-    > .cards {
-      margin: 0 1rem;
-      gap: 1.5rem;
-      > .card {
-        @include utils.flexer(column);
-        text-align: center;
-        color: utils.$color2;
+    .chooseMain {
+      padding-top: 3rem;
+      @include utils.body;
+      width: 90%;
+
+      > h2 {
+        font-size: 2rem;
+      }
+      > h3 {
+        font-size: 1.2rem;
+      }
+
+      > .cards {
         gap: 1rem;
-        padding: 3rem 2rem;
-        > .icon {
-          font-size: 3rem;
+        > .card {
+          @include utils.flexer(column);
+          padding: 3rem 1rem;
+          > .icon {
+            font-size: 2rem;
+          }
+          > h4 {
+            font-size: 1.2rem;
+          }
+          > p {
+            font-size: 1rem;
+          }
         }
-        > h4 {
-          font-size: 1.5rem;
-          font-weight: 600;
-        }
-        > p {
-          color: utils.$color3;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .choose {
+    @media screen and (max-width: 620px) {
+      display: none;
+    }
+    .chooseMain {
+      @include utils.body;
+      width: 100%;
+
+      > h2 {
+        font-size: 1.8rem;
+      }
+      > h3 {
+        font-size: 1.2rem;
+      }
+
+      > .cards {
+        gap: 0.8rem;
+        > .card {
+          @include utils.flexer(column);
+          padding: 1.5rem 0.8rem;
+          > .icon {
+            font-size: 1.5rem;
+          }
+          > h4 {
+            font-size: 1.2rem;
+          }
+          > p {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -82,7 +121,7 @@
 .mobile {
   display: none;
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 620px) {
     margin: 2rem 0;
     display: block;
     width: 100%;

@@ -1,5 +1,9 @@
 import { RxCheckCircled } from "react-icons/rx";
 import style from "../styles/pricing.module.scss";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 interface Feature {
   title: string;
@@ -72,6 +76,33 @@ const Pricing = () => {
             </div>
           </div>
         ))}
+        <div className={style.mobile}>
+          <Carousel
+            centerMode={true}
+            showArrows={false}
+            autoPlay={false}
+            showStatus={false}
+          >
+            {pricings.map((plans, i) => (
+              <div className={style.card} key={i}>
+                <h3>{plans.category}</h3>
+                <div className={style.prices}>
+                  <span className={style.currency}>$</span>
+                  {plans.price} <span className={style.duration}>/month</span>
+                </div>
+                <button className={style.btn}>Buy Now</button>
+                <div className={style.features}>
+                  {plans.features.map((features, i) => (
+                    <span className={style.feat} key={i}>
+                      <features.icon className={style.icon} />
+                      {features.title}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </section>
   );
