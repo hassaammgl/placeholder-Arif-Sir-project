@@ -1,12 +1,15 @@
 import style from "../styles/trust.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import StarRatings from "react-star-ratings";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+// import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/scrollbar";
 import { useEffect, useState } from "react";
 
 interface commentInterface {
@@ -18,14 +21,14 @@ interface commentInterface {
 }
 
 const Trust = () => {
-  const [winWidth, setWinWidth] = useState<number>();
+  // const [winWidth, setWinWidth] = useState<number>();
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWinWidth(window.innerWidth);
-    });
-    return window.removeEventListener("resize", () => {});
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", () => {
+  //     setWinWidth(window.innerWidth);
+  //   });
+  //   return window.removeEventListener("resize", () => {});
+  // }, []);
 
   const comments: commentInterface[] = [
     {
@@ -92,6 +95,43 @@ const Trust = () => {
       author: "Milton Austin",
     },
   ];
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        // breakpoint: 768,
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          // initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className={style.trust}>
       <div className={style.trustMain}>
@@ -100,8 +140,29 @@ const Trust = () => {
           Our goal is your success.We do our best to make your mission easy and
           save time.
         </h3>
-        <div className={style.silderbox}>
-          <Swiper
+        <div className={style.sliderbox}>
+          <Slider {...settings}>
+            {comments.map((comment, i) => {
+              return (
+                <div key={i}>
+                  <div className={style.slides}>
+                    <h4>{comment.comment}</h4>
+                    <StarRatings
+                      rating={comment.stars}
+                      starRatedColor="#F5A623"
+                      numberOfStars={5}
+                      starDimension="23px"
+                      starSpacing="5px"
+                      name="rating"
+                    />
+                    <p>{comment.description}</p>
+                    <span>{comment.author}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
+          {/* <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={70}
             // slidesPerView={winWidth < 1200 ? 3 : 2 }
@@ -131,7 +192,8 @@ const Trust = () => {
                 </SwiperSlide>
               );
             })}
-          </Swiper>
+          </Swiper> */}
+
           <div className={style.btn}>
             <button className={style.free_trail}>Start Free trial</button>
           </div>
