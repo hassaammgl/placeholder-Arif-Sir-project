@@ -53,10 +53,9 @@
         border-radius: 7px;
         padding: 0.8rem 2.5rem;
         margin: 4rem 2rem;
-
-        @media screen and (max-width: 500px) {
-          margin: 1.5rem 1rem;
-        }
+      }
+      @media screen and (max-width: 600px) {
+        margin: 0;
       }
     }
 
@@ -71,6 +70,7 @@
 
 .slides {
   // width: 20rem;
+  margin-right: 2rem;
   @include utils.flexer(column);
   padding: 1.3rem;
   text-align: center;
@@ -96,5 +96,9 @@
     color: utils.$color1;
     font-weight: 600;
     font-size: 1.3rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-right: 0.5rem;
   }
 }
